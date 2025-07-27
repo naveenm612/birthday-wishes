@@ -1,0 +1,317 @@
+.background {
+    background: linear-gradient(to bottom, #ffe6f0, #fdf4ff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.birthday-card-container {
+  background: linear-gradient(to bottom, #fff5fb, #fdf6f7);
+  padding: 40px;
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  color: #d63384;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.title span {
+  color: #e83e8c;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.file-name {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+  font-style: italic;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2cce0;
+  background-color: #fff0f8;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.photo-upload {
+  border: 2px dashed #e2cce0;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff8fb;
+}
+
+.photo-upload input[type="file"] {
+  display: none;
+}
+
+.photo-upload label {
+  display: block;
+  cursor: pointer;
+  color: #b772b0;
+  font-size: 14px;
+}
+
+.photo-upload span {
+  font-size: 24px;
+  display: block;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.toggle-buttons button {
+  width: 49%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ffe3f2;
+  color: #cc2e7b;
+  transition: all 0.3s ease;
+}
+
+.toggle-buttons .active {
+  background-color: #f85ca4;
+  color: white;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  background: linear-gradient(to right, #f476d2, #f8d98c);
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:enabled {
+  opacity: 1;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Container for the dropdown */
+.custom-dropdown {
+  position: relative;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Header shown before click */
+.dropdown-header {
+  background-color: #ffeef8;
+  border: 1px solid #e2cce0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5c2b51;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* Dropdown icon arrow */
+.dropdown-header .arrow {
+  font-size: 12px;
+  color: #aa4a84;
+}
+
+/* Dropdown list container */
+.dropdown-list {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e2cce0;
+  border-radius: 14px;
+  margin-top: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* Each message item */
+.dropdown-list li {
+  padding: 12px 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.dropdown-list li:hover {
+  padding: 12px ;
+  background-color: #fff0f7;
+}
+
+/* Highlight selected item */
+.dropdown-list .selected {
+  background-color: #ffe4f0;
+  font-weight: 600;
+  color: #d63384;
+  border-left: 5px solid #f78acb;
+}
+
+
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .birthday-card-container {
+    padding: 20px;
+    margin: 20px 12px;
+    max-width: 95%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .photo-upload {
+    padding: 20px 10px;
+  }
+
+  .photo-upload span {
+    font-size: 20px;
+  }
+
+  .toggle-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toggle-buttons button {
+    width: 100%;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .dropdown-header {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .dropdown-list li {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .birthday-card-container {
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13.5px;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    font-size: 14px;
+    padding: 11px;
+  }
+
+  .photo-upload span {
+    font-size: 22px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+    padding: 13px;
+  }
+
+  .toggle-buttons button {
+    font-size: 14px;
+  }
+}
+
+/* Desktops and Large Screens (769px and up) */
+@media (min-width: 769px) {
+  .birthday-card-container {
+    max-width: 400px;
+  }
+}
+.title {
+  font-size: clamp(20px, 5vw, 26px);
+}
+
+.subtitle {
+  font-size: clamp(12px, 2vw, 14px);
+}

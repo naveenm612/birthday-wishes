@@ -1,0 +1,406 @@
+/* Background */
+.preview-background {
+    background: linear-gradient(to bottom, #ffe6f0, #fdf4ff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Main Card */
+.preview-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    max-width: 420px;
+    width: 90%;
+    z-index: 2;
+    animation: bounceIn 1s ease;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+}
+
+/* Happy Birthday + Name */
+.greeting {
+    font-size: 26px;
+    color: #ff4d88;
+    margin-bottom: 10px;
+    animation: floatUpDown 3s ease-in-out infinite;
+    font-family: 'Pacifico', cursive;
+}
+
+.name-text {
+    font-size: 24px;
+    color: #bd88ef;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-style: italic;
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+/* Photo Circle */
+.photo-circle {
+    width: 130px;
+    height: 130px;
+    margin: 10px auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.glow-border {
+    animation: pulseGlow 2s infinite ease-in-out;
+    box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.5);
+}
+
+.photo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-photo {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+
+/* Message */
+.message-box {
+    background: #fdf4ff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+/* Emojis */
+.emojis {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 26px;
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+
+/* Buttons */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    color: #f857a6 !important;
+}
+
+.primary-btn {
+    padding: 10px 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    color: #fff !important;
+
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, #f857a6, #ff5858);
+    color: white;
+}
+
+.secondary-btn {
+    background: #fff;
+    border: 2px solid #f857a6;
+}
+
+.rotate-icon {
+    font-size: 25px;
+    color: #ff4d88;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.rotate-icon:hover {
+    transform: rotate(-90deg);
+}
+
+.share-icon {
+    font-size: 20px !important;
+    color: #fff;
+    cursor: pointer;
+    padding: 0px 4px 4px 0px;
+}
+
+/* --- Animations --- */
+
+/* Initial card bounce in */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5) translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Glow border effect */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 15px 2px rgba(255, 105, 180, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 25px 8px rgba(255, 105, 180, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 15px 2px rgba(255, 105, 180, 0.4);
+    }
+}
+
+/* Fade up content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating up-down for greeting and emojis */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* container that holds hearts + line */
+.heart-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.heart {
+    font-family: "Pacifico", cursive;
+    font-size: 18px;
+    line-height: 1;
+    animation: pulseHeart 5s ease-in-out infinite;
+}
+
+.heart.left {
+    color: #ff6db5;
+}
+
+/* pink outline */
+.heart.right {
+    color: #ffd45c;
+}
+
+/* yellow‑gold outline */
+
+/* gradient bar in between */
+.gradient-bar {
+    width: 135px;
+    /* tweak width to suit */
+    height: 1px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background: linear-gradient(90deg,
+            #ff6db5 0%,
+            #ffa3c8 40%,
+            #ffd45c 100%);
+    background-size: 200% 100%;
+    animation: moveGradient 6s linear infinite;
+}
+
+/* subtle pulsing hearts */
+@keyframes pulseHeart {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+/* animated flowing gradient */
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+
+
+/* ❄️ ROSE SNOW BACKGROUND ANIMATION */
+.snow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: #fca3c2;
+    /* soft rose */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+}
+.snow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: #fca3c2;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(110vh) translateX(30px);
+        opacity: 0;
+    }
+}
+
+/* Mobile Devices (Portrait) - Up to 480px wide */
+@media (max-width: 480px) {
+  .preview-container {
+    padding: 16px;
+    max-width: 95%;
+    margin: 10px;
+  }
+
+  .greeting {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .name-text {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .photo-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .message-box {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .emojis {
+    font-size: 18px;
+    gap: 12px;
+  }
+
+  .primary-btn, .secondary-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+    width: 100%; /* stack buttons on small screens */
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .heart {
+    font-size: 12px;
+  }
+
+  .gradient-bar {
+    width: 80px;
+  }
+
+  .rotate-icon {
+    font-size: 18px;
+  }
+
+  .share-icon {
+    font-size: 14px !important;
+  }
+}
